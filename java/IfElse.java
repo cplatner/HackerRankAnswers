@@ -6,7 +6,9 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class IfElse {
+//* https://www.hackerrank.com/challenges/java-if-else/
+public class IfElse
+{
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args)
