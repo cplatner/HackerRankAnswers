@@ -1,0 +1,23 @@
+###############################
+# Core EditorConfig Options   #
+###############################
+root = true
+
+# All files
+[*]
+indent_style = space
+
+# Code files
+[*.{java}]
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = false
+charset = utf-8-bom
+
+###############################
+# Java Coding Conventions     #
+###############################
+[*.{java}]
+spaces_around_operators = true
+indent_brace_style = K&R
+wildcard_import_limit = 99
