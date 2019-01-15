@@ -1,10 +1,7 @@
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class HourglassSum
 {
@@ -14,11 +11,10 @@ public class HourglassSum
         //* get array dimensions
         int x = arr.length;
         int y = arr[0].length;
-        //* use 2 less for m and n
-
+        //* use 2 less for row/col
         int maxSum = Integer.MIN_VALUE;
         for (int i = 0; i < x - 2; i++) {
-            for (int j = 0; j < y -2 ; j++) {
+            for (int j = 0; j < y - 2; j++) {
                 int sum = computeOneSum(arr, i, j);
                 // System.out.println(sum);
                 maxSum = Math.max(maxSum, sum);
@@ -44,13 +40,13 @@ public class HourglassSum
 
     private static void _testMain(String[] args)
     {
-        int[][] multi = new int[][]{
-            {1, 1, 1, 0, 0, 0},
-            {0, 1, 0, 0, 0, 0},
-            {1, 1, 1, 0, 0, 0},
-            {0, 0, 2, 4, 4, 0},
-            {0, 0, 0, 2, 0, 0},
-            {0, 0, 1, 2, 4, 0}
+        int[][] multi = new int[][] {
+            { 1, 1, 1, 0, 0, 0 },
+            { 0, 1, 0, 0, 0, 0 },
+            { 1, 1, 1, 0, 0, 0 },
+            { 0, 0, 2, 4, 4, 0 },
+            { 0, 0, 0, 2, 0, 0 },
+            { 0, 0, 1, 2, 4, 0 }
         };
 
         testHourglassSum(multi, 19);
@@ -58,7 +54,7 @@ public class HourglassSum
 
     private static void testHourglassSum(final int[][] input, final int expected)
     {
-        int  result = hourglassSum(input);
+        int result = hourglassSum(input);
 
         if (result == expected) {
             System.out.println("PASS: " + result);
